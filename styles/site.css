@@ -936,7 +936,14 @@ section { padding: 120px 0; position: relative; }
   .nav-inner { padding: 0 22px; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-  .hero-content { padding-left: 22px; padding-right: 22px; }
+
+  /* --- Hero --- */
+  .hero-content {
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: calc(var(--nav-height) + 32px);
+    padding-bottom: 72px;
+  }
   .hero {
     background-image:
       linear-gradient(to bottom, rgba(8,8,10,0.82) 0%, rgba(8,8,10,0.3) 20%),
@@ -944,10 +951,40 @@ section { padding: 120px 0; position: relative; }
       url('../assets/hero-car.jpg');
     background-size: cover, cover, cover;
     background-position: center, center, center 35%;
+    overflow: visible;
   }
-  .hero h1 { font-size: 3.1rem; }
+  /* fix: line-height 0.9 clips uppercase letters behind overflow:hidden on mobile */
+  .hero h1 {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
   .hero-sub { font-size: 1rem; }
   .hero-stripe { width: 5px; }
+  .hero-actions { flex-direction: column; gap: 12px; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* --- Service page hero --- */
+  .service-hero {
+    min-height: 52vh;
+    overflow: visible;
+  }
+  .service-hero-content { padding: 56px 22px 40px; }
+  .service-hero h1 {
+    font-size: clamp(2.2rem, 9vw, 3rem);
+    line-height: 1.05;
+  }
+
+  /* --- About hero --- */
+  .about-hero-content { padding: 72px 22px 48px; }
+  .about-hero { overflow: visible; }
+
+  /* --- General h1/h2 line-height on mobile --- */
+  h1 { line-height: 1.05; }
+  h2 { line-height: 1.08; }
+  .cta-banner h2 { line-height: 1.05; }
+
+  /* --- Other layout --- */
   .services-grid { grid-template-columns: 1fr; }
   .trust-bar .container { flex-direction: column; padding: 0; }
   .trust-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.18); width: 100%; padding: 20px 0; }
@@ -958,6 +995,11 @@ section { padding: 120px 0; position: relative; }
   .form-grid-2 { grid-template-columns: 1fr; }
   .services-checkboxes { grid-template-columns: 1fr; }
   .contact-form { padding: 32px 24px; }
+}
+
+@media (max-width: 400px) {
+  .hero h1 { font-size: 2.2rem; }
+  .service-hero h1 { font-size: 2rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
