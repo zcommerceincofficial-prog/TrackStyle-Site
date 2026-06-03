@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* ---- Brand (locked) ---- */
+  --yellow: #F5C100;
+  --yellow-hover: #E2AF00;
+  --yellow-deep: #C99A00;
+  --yellow-soft: #FCE7A0;
+  --black: #0B0B0C;
+  --white: #FFFFFF;
+
+  /* ---- Dark surface scale ---- */
+  --dark: #0F0F11;        /* alt section background */
+  --card: #161618;        /* card surface (also used by inline styles) */
+  --card-2: #1C1C20;      /* card hover */
+  --border: #28282D;      /* hairline on dark (also used by inline styles) */
+  --border-soft: #1E1E22; /* subtler hairline */
+
+  /* ---- Text on dark ---- */
+  --gray: #8B8B92;        /* muted (also used by inline styles) */
+  --light-gray: #C9C9CF;  /* secondary */
+
+  /* ---- Fonts ---- */
+  --font-display: 'Archivo Expanded', 'Archivo', sans-serif;
+  --font-heading: 'Archivo Expanded', 'Archivo', sans-serif;
+  --font-body: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono: 'Spline Sans Mono', ui-monospace, monospace;
+
+  --max-width: 1240px;
+  --nav-height: 76px;
+}
