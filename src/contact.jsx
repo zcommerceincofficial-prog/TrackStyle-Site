@@ -1,13 +1,5 @@
-var SERVICE_OPTIONS = [
-  'Window Tint',
-  'Paint Protection Film',
-  'Powder Coating',
-  'Color Change Wraps',
-  'Ceramic Coating',
-];
-
 function Contact() {
-  var _useState = React.useState({ name: '', email: '', phone: '', vehicle: '', services: [], message: '' });
+  var _useState = React.useState({ name: '', email: '', phone: '', vehicle: '', message: '' });
   var form = _useState[0];
   var setForm = _useState[1];
 
@@ -22,16 +14,6 @@ function Contact() {
       var next = Object.assign({}, prev);
       next[field] = val;
       return next;
-    });
-  }
-
-  function handleCheck(e) {
-    var svc = e.target.value;
-    var checked = e.target.checked;
-    setForm(function(prev) {
-      var services = prev.services.slice();
-      if (checked) { services.push(svc); } else { services = services.filter(function(s) { return s !== svc; }); }
-      return Object.assign({}, prev, { services: services });
     });
   }
 
@@ -97,22 +79,6 @@ function Contact() {
                     React.createElement('div', { className: 'form-group' },
                       React.createElement('label', null, 'Vehicle'),
                       React.createElement('input', { type: 'text', name: 'vehicle', value: form.vehicle, onChange: handleChange, placeholder: '2023 Toyota GR86' })
-                    )
-                  ),
-                  React.createElement('div', { className: 'form-group' },
-                    React.createElement('label', null, 'Services Interested In'),
-                    React.createElement('div', { className: 'services-checkboxes' },
-                      SERVICE_OPTIONS.map(function(svc) {
-                        return React.createElement('label', { key: svc, className: 'check-label' },
-                          React.createElement('input', {
-                            type: 'checkbox',
-                            value: svc,
-                            checked: form.services.indexOf(svc) > -1,
-                            onChange: handleCheck
-                          }),
-                          svc
-                        );
-                      })
                     )
                   ),
                   React.createElement('div', { className: 'form-group' },
